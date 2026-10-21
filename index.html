@@ -161,7 +161,7 @@
         <main>
             <h2>Proposition: Officers with substantiated misconduct still get promoted.</h2>
 
-            <p>[PLACE HOLDER]</p>
+            <p>Dataset: <a href="https://www.propublica.org/datastore/dataset/civilian-complaints-against-new-york-city-police-officers">Civilian Complaints Against New York City Police Officers</a>.</p>
 
             <section>
                 <h3>FOR the Proposition</h3>
@@ -169,18 +169,17 @@
                 <p>The NYPD fails to hold officers accountable, where officers with more upheld misconduct complaints are more likely to be promoted, leading to misconduct being effectively rewarded instead of punished.</p>
 
                 <figure>
-                    <img src="images/supporting.png" alt="[PLACE HOLDER]" />
-                    <figcaption>[PLACE HOLDER]</figcaption>
+                    <img src="images/supporting.png" alt="" />
+                    <figcaption>Share of entry-level New York Police Department (NYPD) officers who were later promoted, by how many misconduct complaints the city's independent review board upheld against them</figcaption>
                 </figure>
 
                 <p>Design Decisions and Rationale:</p>
 
                 <ul>
-                    <li><strong>Binning upheld misconduct into 1 / 2 / 3&ndash;4 / 5+ (Score: &minus;0.5)</strong> [PLACE HOLDER]</li>
-                    <li><strong>Defining "promoted" as any higher rank, including detective (Score: &minus;1)</strong> [PLACE HOLDER]</li>
-                    <li><strong>Starting the y-axis at 40% (Score: &minus;2)</strong> Uses truncated y-axis that starts at 40% instead of 0%, making the 5+ group (72%) look 4 times taller than the 1-complaint group (47%), when the 5+ group is really only 50% more than the 1-complaint group.</li>
-                    <li><strong>A red gradient that darkens as misconduct increases (Score: &minus;0.5)</strong> [PLACE HOLDER]</li>
-                    <li><strong>Causal title and the "Nearly 3 in 4" callout (Score: &minus;1)</strong> The title implicitly framed the observed correlation between misconduct and promotion as causation, implying misconduct causes promotion. In reality, officers who get more complaints likely serve longer, and thus are more likely to get promoted.</li>
+                    <li><strong>Y-axis truncated at 40% (Score -2.0):</strong> The y-axis is started at 40% instead of 0%, which make the trend looks like a big jump where the bar for 5+ look 4.5x as big as the bar for 1, when in reality it is only 1.5x as big. This is deceptive and artificially inflated the trend to make it more convincing. The top is also truncated at 80% to make each bar look taller than they otherwise should.</li>
+                    <li><strong>Title implies causality (Score -1.0):</strong> The title turns a factual observation into a casual claim that cannot be established from the data. Police who get more complaints have likely served for longer, and are thus more likely to be promoted. The observation might be due to a confound.</li>
+                    <li><strong>The trend is real even when service time is controlled (Score +2.0):</strong> When officers are grouped by their service time, the trend weakens but remains significant, so the graph isn&rsquo;t cherry picking to force a trend to appear. Service time only explains part of the observation, not all.</li>
+                    <li><strong>Red bar where brightness scale with data (Score +1.0):</strong> The bar is colored red and is darker the higher the promotion percentage. This red color implies the result is undesired while the brightness scale highlights the change to improve persuasion.</li>
                 </ul>
             </section>
 
@@ -190,18 +189,16 @@
                 <p>The NYPD takes accountability with a working disciplinary system, where a substantiated misconduct finding hurts the officer's career, and most officers with one are never promoted beyond their initial rank.</p>
 
                 <figure>
-                    <img src="images/opposing.png" alt="[PLACE HOLDER]" width="950" />
-                    <figcaption>[PLACE HOLDER]</figcaption>
+                    <img src="images/opposing.png" alt="" width="950" />
+                    <figcaption>Patrol officers at the time of the complaint who now hold a supervisory rank, by the board's finding</figcaption>
                 </figure>
 
                 <p>Design Decisions and Rationale:</p>
 
                 <ul>
-                    <li><strong>Patrol officers only, with promotion to Sergeant or above (Score: +1.5)</strong> We limited the data to only patrol officers because they start at the same rank. We also only counted promotions to Sergeant and above, because a detective assignment is a designation rather than a civil-service promotion. Including other ranks would have inflated the numbers.</li>
-                    <li><strong>Comparing three outcome groups (Score: +1)</strong> We pooled from three outcome groups (exonerated, unsubstantiated, and substantiated) so the audience could see the difference between officers who were cleared against those who were not. Cleared officers have nearly identical promotion rates.</li>
-                    <li><strong>Title: "cuts the odds of making sergeant by 30%" (Score: &minus;1.5)</strong> Utilizes relative vs absolute framing. 30% lower sounds dramatic, however the gap is only 8 percentage points(27% vs 19%). Its title also uses the term &ldquo;odds&rdquo; which is a different statistic than probability. There is also implied causality between misconduct findings and lower promotion rate. In reality, it's just correlation and there are other factors that could contribute to it.</li>
-                    <li><strong>Dashed average line and "30% lower" arrow (Score: &minus;1)</strong> We used a dashed line to show the average of the two comparison groups to clarify the 30% difference in the title. The "30% lower" blue line with an arrow shows the relative difference between the group average which required the axis to start at 0%.</li>
-                    <li><strong>Blue highlight, gray comparison bars, axis from zero (Score: +0.5)</strong> We used the blue color to highlight our key group while using gray to differentiate it from the comparison groups.</li>
+                    <li><strong>Relative Framing, &ldquo;30% lower,&rdquo; (Score -1.5):</strong> The absolute gap is 8% points (27% vs 19%) , but 30% lower sounds much bigger. The word &ldquo;odds&rdquo; is also deceiving, we computed relative risk, while the actual odds ratio is about 0.63 or 37% lower odds. Writing &ldquo;8 points lower&rdquo; is more accurate but less effective</li>
+                    <li><strong>Comparing against exonerated and unsubstantiated groups, dashed average line (score +1):</strong> Using cleared officers as the comparison group is proper control, and the two groups are nearly identical (28% vs 27%), the dashed line makes the gap easy to visualize vs a plain graph alternative.</li>
+                    <li><strong>0 based axis with contrast highlighted bars (Score +1.5):</strong> Starting the axis at 0 keeps the bar lengths proportional to true values. The blue highlight directs attention to the key group without distorting it. The highlight makes the graph more alive compared to a flat all gray graph initially.</li>
                 </ul>
             </section>
 
