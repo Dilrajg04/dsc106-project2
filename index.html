@@ -176,10 +176,10 @@
                 <p>Design Decisions and Rationale:</p>
 
                 <ul>
-                    <li><strong>Y-axis truncated at 40% (Score -2.0):</strong> The y-axis is started at 40% instead of 0%, which makes the trend look like a big jump where the bar for 5+ look 4.5x as big as the bar for 1, when in reality it is only 1.5x as big. This is deceptive and artificially inflated the trend to make it more convincing. The top is also truncated at 80% to make each bar look taller than they otherwise should.</li>
+                    <li><strong>Y-axis truncated at 40% (Score -2.0):</strong> The y-axis is started at 40% instead of 0%, which makes the trend look like a big jump where the bar for 5+ looks 4.5x as big as the bar for 1, when in reality it is only 1.5x as big. This is deceptive and artificially inflates the trend to make it more convincing. The top is also truncated at 80% to make each bar look taller than they otherwise should.</li>
                     <li><strong>Title implies causality (Score -1.0):</strong> The title turns a factual observation into a causal claim that cannot be established from the data. Police who get more complaints have likely served for longer, and are thus more likely to be promoted. The observation might be due to a confound.</li>
                     <li><strong>The trend is real even when service time is controlled (Score +2.0):</strong> When officers are grouped by their service time, the trend weakens but remains significant, so the graph isn&rsquo;t cherry picking to force a trend to appear. Service time only explains part of the observation, not all.</li>
-                    <li><strong>Red bar where brightness scale with data (Score +1.0):</strong> The bar is colored red and is darker the higher the promotion percentage. This red color implies the result is undesired while the brightness scale highlights the change to improve persuasion.</li>
+                    <li><strong>Red bar where brightness scales with data (Score +1.0):</strong> The bar is colored red and is darker the higher the promotion percentage. This red color implies the result is undesired while the brightness scale highlights the change to improve persuasion.</li>
                 </ul>
             </section>
 
@@ -196,7 +196,7 @@
                 <p>Design Decisions and Rationale:</p>
 
                 <ul>
-                    <li><strong>Relative Framing, &ldquo;30% lower,&rdquo; (Score -1.5):</strong> The absolute gap is 8 percentage points (27% vs 19%) , but 30% lower sounds much bigger. The word &ldquo;odds&rdquo; is also deceiving, we computed relative risk, while the actual odds ratio is about 0.63 or 37% lower odds. Writing &ldquo;8 points lower&rdquo; is more accurate but less effective</li>
+                    <li><strong>Relative Framing, &ldquo;30% lower,&rdquo; (Score -1.5):</strong> The absolute gap is 8 percentage points (27% vs 19%), but 30% lower sounds much bigger. The word &ldquo;odds&rdquo; is also deceiving, we computed relative risk, while the actual odds ratio is about 0.63 or 37% lower odds. Writing &ldquo;8 points lower&rdquo; is more accurate but less effective.</li>
                     <li><strong>Comparing against exonerated and unsubstantiated groups, dashed average line (score +1):</strong> Using cleared officers as the comparison group is proper control, and the two groups are nearly identical (28% vs 27%), the dashed line makes the gap easy to visualize vs a plain graph alternative.</li>
                     <li><strong>0 based axis with contrast highlighted bars (Score +1.5):</strong> Starting the axis at 0 keeps the bar lengths proportional to true values. The blue highlight directs attention to the key group without distorting it. The highlight makes the graph more alive compared to a flat all gray graph initially.</li>
                 </ul>
@@ -205,7 +205,7 @@
             <section>
                 <h2>Final Reflection</h2>
 
-                <p>Throughout this project, we learned how much the way data is presented can influence people's opinions. One of the easiest parts was probably choosing which information to highlight to support each side of our proposition. It was more difficult to create two different arguments that are convincing using the same dataset. For example, when supporting our proposition, we focused more on the fact that 72% of officers with five or more upheld misconduct complaints were promoted. While on the other side, we highlighted that 78% of officers were never promoted after their first substantial complaint. Both of these statistics came from the same dataset, but audiences can come up with different conclusions depending on how the data is presented.</p>
+                <p>Throughout this project, we learned how much the way data is presented can influence people's opinions. One of the easiest parts was probably choosing which information to highlight to support each side of our proposition. It was more difficult to create two different arguments that are convincing using the same dataset. For example, when supporting our proposition, we focused more on the fact that 72% of officers with five or more upheld misconduct complaints were promoted. While on the other side, we highlighted that 78% of officers were never promoted after their first substantiated complaint. Both of these statistics came from the same dataset, but audiences can come up with different conclusions depending on how the data is presented.</p>
 
                 <p>What surprised us most was how small design choices could affect how people understand the data. For example, when we changed the y-axis to start at 40% instead of 0%, the difference in promotion rates looked much bigger than it actually was. We also noticed that using certain words in the titles could make the results sound more dramatic. This made us realize that even if the numbers are accurate, the way we present them can still mislead readers. After seeing this, we realized that ethical visualization is not just about having accurate numbers, but also about making sure the way we present the data doesn't give people the wrong idea.</p>
 
