@@ -1,216 +1,268 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>Project 2 Report</title>
-        <style>
-            :root {
-                --color-neutral-95: hsl(220 10% 95%);
-                --color-neutral-90: hsl(220 10% 90%);
-                --color-neutral-80: hsl(220 10% 80%);
-                --color-neutral-70: hsl(220 10% 70%);
-                --color-neutral-60: hsl(220 10% 60%);
-                --color-neutral-50: hsl(220 10% 50%);
-                --color-neutral-40: hsl(220 10% 40%);
-                --color-neutral-30: hsl(220 10% 30%);
-                --color-neutral-20: hsl(220 10% 20%);
-                --color-neutral-10: hsl(220 10% 10%);
+
+<head>
+    <title>Project 2 Report</title>
+    <style>
+        :root {
+            --color-neutral-95: hsl(220 10% 95%);
+            --color-neutral-90: hsl(220 10% 90%);
+            --color-neutral-80: hsl(220 10% 80%);
+            --color-neutral-70: hsl(220 10% 70%);
+            --color-neutral-60: hsl(220 10% 60%);
+            --color-neutral-50: hsl(220 10% 50%);
+            --color-neutral-40: hsl(220 10% 40%);
+            --color-neutral-30: hsl(220 10% 30%);
+            --color-neutral-20: hsl(220 10% 20%);
+            --color-neutral-10: hsl(220 10% 10%);
+        }
+
+        html {
+            font: 100%/1.5 system-ui;
+            counter-reset: figure;
+            background: var(--color-neutral-95);
+            max-width: min(75vw, 80em);
+            margin: 0 auto;
+        }
+
+        /* Headings */
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            line-height: 1.1;
+            font-weight: 600;
+            text-wrap: balance;
+        }
+
+        h1,
+        h2 {
+            border-bottom: 1px solid var(--color-neutral-80);
+            padding-bottom: 0.2em;
+        }
+
+        h1 {
+            margin-block: 1em 0.5rem;
+            font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+            font-weight: 800;
+
+            small {
+                display: block;
+                width: fit-content;
+                padding: 0.2em 0.5em;
+                margin-inline: auto;
+                color: white;
+                background: var(--color-neutral-40);
+                font-size: 40%;
+                text-transform: uppercase;
+                white-space: nowrap;
+            }
+        }
+
+        h2 {
+            font-size: 180%;
+            color: var(--color-neutral-30);
+        }
+
+        h3 {
+            font-size: 130%;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        /* Lists */
+
+        ul,
+        ol {
+            padding-inline-start: 2em;
+        }
+
+        li {
+            &::marker {
+                color: var(--color-neutral-40);
             }
 
-            html {
-                font: 100%/1.5 system-ui;
-                counter-reset: figure;
+            +li {
+                margin-top: 0.2em;
+            }
+        }
+
+        /* Sectioning elements */
+
+        header {
+            padding-block: 1em;
+            text-align: center;
+        }
+
+        main {
+            background: white;
+            color: var(--color-neutral-20);
+            border-radius: 1rem;
+            padding: 0.1rem 2rem;
+        }
+
+        /* Figures */
+
+        figure {
+            margin: 1em 0;
+            padding: 0.5rem;
+            margin-inline: -0.5em;
+            border: 1px solid var(--color-neutral-80);
+            box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+            text-align: center;
+            background: white;
+
+            >figcaption {
+                font: 500 75% var(--font-sans);
                 background: var(--color-neutral-95);
-                max-width: min(75vw, 80em);
-                margin: 0 auto;
-            }
+                padding: 0.5rem;
+                margin: -0.5rem;
+                margin-top: 0.5rem;
+                counter-increment: figure;
+                text-align: left;
 
-            /* Headings */
-
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-                line-height: 1.1;
-                font-weight: 600;
-                text-wrap: balance;
-            }
-
-            h1,
-            h2 {
-                border-bottom: 1px solid var(--color-neutral-80);
-                padding-bottom: 0.2em;
-            }
-
-            h1 {
-                margin-block: 1em 0.5rem;
-                font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
-                font-weight: 800;
-
-                small {
-                    display: block;
-                    width: fit-content;
-                    padding: 0.2em 0.5em;
-                    margin-inline: auto;
-                    color: white;
-                    background: var(--color-neutral-40);
-                    font-size: 40%;
-                    text-transform: uppercase;
-                    white-space: nowrap;
-                }
-            }
-
-            h2 {
-                font-size: 180%;
-                color: var(--color-neutral-30);
-            }
-
-            h3 {
-                font-size: 130%;
-            }
-
-            img {
-                max-width: 100%;
-            }
-
-            /* Lists */
-
-            ul,
-            ol {
-                padding-inline-start: 2em;
-            }
-
-            li {
-                &::marker {
+                &::before {
+                    content: "Figure " counter(figure) ": ";
+                    font-weight: bold;
                     color: var(--color-neutral-40);
                 }
 
-                + li {
-                    margin-top: 0.2em;
-                }
-            }
-
-            /* Sectioning elements */
-
-            header {
-                padding-block: 1em;
-                text-align: center;
-            }
-
-            main {
-                background: white;
-                color: var(--color-neutral-20);
-                border-radius: 1rem;
-                padding: 0.1rem 2rem;
-            }
-
-            /* Figures */
-
-            figure {
-                margin: 1em 0;
-                padding: 0.5rem;
-                margin-inline: -0.5em;
-                border: 1px solid var(--color-neutral-80);
-                box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
-                text-align: center;
-                background: white;
-
-                > figcaption {
-                    font: 500 75% var(--font-sans);
-                    background: var(--color-neutral-95);
-                    padding: 0.5rem;
-                    margin: -0.5rem;
-                    margin-top: 0.5rem;
-                    counter-increment: figure;
-                    text-align: left;
-
-                    &::before {
-                        content: "Figure " counter(figure) ": ";
-                        font-weight: bold;
-                        color: var(--color-neutral-40);
-                    }
-
-                    a:not(:hover, :focus, :active) {
-                        color: inherit;
-                        text-decoration: underline;
-                        text-decoration-color: color-mix(
-                            in lab,
+                a:not(:hover, :focus, :active) {
+                    color: inherit;
+                    text-decoration: underline;
+                    text-decoration-color: color-mix(in lab,
                             currentColor,
-                            transparent 70%
-                        );
-                    }
+                            transparent 70%);
                 }
             }
-        </style>
-    </head>
+        }
+    </style>
+</head>
 
-    <body>
-        <header>
-            <h1>
-                <small>Project 2</small>
-                Persuasive or Deceptive Visualization?
-            </h1>
+<body>
+    <header>
+        <h1>
+            <small>Project 2</small>
+            Persuasive or Deceptive Visualization?
+        </h1>
 
-            <p><strong>Flyson Lin</strong> &mdash; <em>f9lin@ucsd.edu</em></p>
-            <p><strong>Dilraj Grewal</strong> &mdash; <em>dgrewal@ucsd.edu</em></p>
-            <p><strong>Yue Hu</strong> &mdash; <em>yuh181@ucsd.edu</em></p>
-            <p><strong>Edmond Koei</strong> &mdash; <em>ekoei@ucsd.edu</em></p>
-        </header>
+        <p><strong>Flyson Lin</strong> &mdash; <em>f9lin@ucsd.edu</em></p>
+        <p><strong>Dilraj Grewal</strong> &mdash; <em>dgrewal@ucsd.edu</em></p>
+        <p><strong>Yue Hu</strong> &mdash; <em>yuh181@ucsd.edu</em></p>
+        <p><strong>Edmond Koei</strong> &mdash; <em>ekoei@ucsd.edu</em></p>
+    </header>
 
-        <main>
-            <h2>Proposition: Officers with substantiated misconduct still get promoted.</h2>
+    <main>
+        <h2>Proposition: Officers with substantiated misconduct still get promoted.</h2>
 
-            <p>Dataset: <a href="https://www.propublica.org/datastore/dataset/civilian-complaints-against-new-york-city-police-officers">Civilian Complaints Against New York City Police Officers</a>.</p>
+        <p>Dataset: <a
+                href="https://www.propublica.org/datastore/dataset/civilian-complaints-against-new-york-city-police-officers">Civilian
+                Complaints Against New York City Police Officers</a>.</p>
 
-            <section>
-                <h3>FOR the Proposition</h3>
+        <section>
+            <h3>FOR the Proposition</h3>
 
-                <p>The NYPD fails to hold officers accountable, where officers with more upheld misconduct complaints are more likely to be promoted, leading to misconduct being effectively rewarded instead of punished.</p>
+            <p>The NYPD fails to hold officers accountable, where officers with more upheld misconduct complaints are
+                more likely to be promoted, leading to misconduct being effectively rewarded instead of punished.</p>
 
-                <figure>
-                    <img src="images/supporting.png" alt="" />
-                    <figcaption>Share of entry-level New York Police Department (NYPD) officers who were later promoted, by how many misconduct complaints the city's independent review board upheld against them</figcaption>
-                </figure>
+            <figure>
+                <img src="images/supporting.png" alt="" />
+                <figcaption>Share of entry-level New York Police Department (NYPD) officers who were later promoted, by
+                    how many misconduct complaints the city's independent review board upheld against them</figcaption>
+            </figure>
 
-                <p>Design Decisions and Rationale:</p>
+            <p>Design Decisions and Rationale:</p>
 
-                <ul>
-                    <li><strong>Y-axis truncated at 40% (Score -2.0):</strong> The y-axis is started at 40% instead of 0%, which makes the trend look like a big jump where the bar for 5+ looks 4.5x as big as the bar for 1, when in reality it is only 1.5x as big. This is deceptive and artificially inflates the trend to make it more convincing. The top is also truncated at 75% to make each bar look taller than they otherwise should.</li>
-                    <li><strong>Title implies causality (Score -1.0):</strong> The title turns a factual observation into a causal claim that cannot be established from the data. Police who get more complaints have likely served for longer, and are thus more likely to be promoted. The observation might be due to a confound.</li>
-                    <li><strong>The trend is real even when service time is controlled (Score +2.0):</strong> When officers are grouped by their service time, the trend weakens but remains significant, so the graph isn&rsquo;t cherry picking to force a trend to appear. Service time only explains part of the observation, not all.</li>
-                    <li><strong>Red bar where brightness scales with data (Score +1.0):</strong> The bar is colored red and is darker the higher the promotion percentage. This red color implies the result is undesired while the brightness scale highlights the change to improve persuasion.</li>
-                </ul>
-            </section>
+            <ul>
+                <li><strong>Y-axis truncated at 40% (Score -2.0):</strong> The y-axis is started at 40% instead of 0%,
+                    which makes the 5+ bar look 4.5x as high as the 1 bar when it is only 1.5x
+                    as high. The y-axis stops at 80%, which makes each bar taller than they should. In combination, they
+                    artificially
+                    inflated the perceived trend to make it steeper than the actual trend in data, making the finding
+                    more shocking and
+                    memorable for the audience.</li>
+                <li><strong>Red bar with brightness that scales (Score -1.5):</strong> The bars are colored red to
+                    emphasize the result is undesired, and the bar is made darker the higher the percentage promoted,
+                    adding visual weight to make the reader uncomfortable. The darker color also draws the reader's
+                    attention to the right side of the plot, highlighting the trend and making them less likely to
+                    notice the truncated axis.</li>
+                <li><strong>Value labels and bolded labels (Score -1.0):</strong> Value labels are added on top of each
+                    bar so the audience never has to look at the y-axis, which makes them less likely to notice the
+                    truncated axis. The 60% and 72% are bolded to add visual weight and further draw attention to the
+                    right.</li>
+                <li><strong>Annotation on the rightmost bar (Score +1.0):</strong> The annotation says nearly 3 in 4
+                    officers with 5+ complaints were promoted. Where the bar implies trend visually, the annotation
+                    expresses the trend in word to help readers understand the meaning and implication of the number. It
+                    is not deceptive and simply helps express and convey the trend more clearly.</li>
+            </ul>
+        </section>
 
-            <section>
-                <h3>AGAINST the Proposition</h3>
+        <section>
+            <h3>AGAINST the Proposition</h3>
 
-                <p>The NYPD takes accountability with a working disciplinary system, where a substantiated misconduct finding hurts the officer's career, and most officers with one are never promoted beyond their initial rank.</p>
+            <p>The NYPD takes accountability with a working disciplinary system, where a substantiated misconduct
+                finding hurts the officer's career, and most officers with one are never promoted beyond their initial
+                rank.</p>
 
-                <figure>
-                    <img src="images/opposing.png" alt="" width="950" />
-                    <figcaption>Patrol officers at the time of the complaint who now hold a supervisory rank, by the board's finding</figcaption>
-                </figure>
+            <figure>
+                <img src="images/opposing.png" alt="" width="950" />
+                <figcaption>Patrol officers at the time of the complaint who now hold a supervisory rank, by the board's
+                    finding</figcaption>
+            </figure>
 
-                <p>Design Decisions and Rationale:</p>
+            <p>Design Decisions and Rationale:</p>
 
-                <ul>
-                    <li><strong>Relative Framing, &ldquo;30% lower,&rdquo; (Score -1.5):</strong> The absolute gap is 8 percentage points (27% vs 19%), but 30% lower sounds much bigger. The word &ldquo;odds&rdquo; is also deceiving, we computed relative risk, while the actual odds ratio is about 0.63 or 37% lower odds. Writing &ldquo;8 points lower&rdquo; is more accurate but less effective.</li>
-                    <li><strong>Comparing against exonerated and unsubstantiated groups, dashed average line (score +1):</strong> Using cleared officers as the comparison group is proper control, and the two groups are nearly identical (28% vs 27%), the dashed line makes the gap easy to visualize vs a plain graph alternative.</li>
-                    <li><strong>0 based axis with contrast highlighted bars (Score +1.5):</strong> Starting the axis at 0 keeps the bar lengths proportional to true values. The blue highlight directs attention to the key group without distorting it. The highlight makes the graph more alive compared to a flat all gray graph initially.</li>
-                </ul>
-            </section>
+            <ul>
+                <li><strong>Relative Framing, &ldquo;30% lower,&rdquo; (Score -1.5):</strong> The absolute gap is 8
+                    percentage points (27% vs 19%), but 30% lower sounds much bigger. The word &ldquo;odds&rdquo; is
+                    also deceiving, we computed relative risk, while the actual odds ratio is about 0.63 or 37% lower
+                    odds. Writing &ldquo;8 points lower&rdquo; is more accurate but less effective.</li>
+                <li><strong>Comparing against exonerated and unsubstantiated groups, dashed average line (score
+                        +1):</strong> Using cleared officers as the comparison group is proper control, and the two
+                    groups are nearly identical (28% vs 27%), the dashed line makes the gap easy to visualize vs a plain
+                    graph alternative.</li>
+                <li><strong>0 based axis with contrast highlighted bars (Score +1.5):</strong> Starting the axis at 0
+                    keeps the bar lengths proportional to true values. The blue highlight directs attention to the key
+                    group without distorting it. The highlight makes the graph more alive compared to a flat all gray
+                    graph initially.</li>
+            </ul>
+        </section>
 
-            <section>
-                <h2>Final Reflection</h2>
+        <section>
+            <h2>Final Reflection</h2>
 
-                <p>Throughout this project, we learned how much the way data is presented can influence people's opinions. One of the easiest parts was probably choosing which information to highlight to support each side of our proposition. It was more difficult to create two different arguments that are convincing using the same dataset. For example, when supporting our proposition, we focused more on the fact that 72% of officers with five or more upheld misconduct complaints were promoted. While on the other side, we highlighted that 78% of officers were never promoted after their first substantiated complaint. Both of these statistics came from the same dataset, but audiences can come up with different conclusions depending on how the data is presented.</p>
+            <p>Throughout this project, we learned how much the way data is presented can influence people's opinions.
+                One of the easiest parts was probably choosing which information to highlight to support each side of
+                our proposition. It was more difficult to create two different arguments that are convincing using the
+                same dataset. For example, when supporting our proposition, we focused more on the fact that 72% of
+                officers with five or more upheld misconduct complaints were promoted. While on the other side, we
+                highlighted that 78% of officers were never promoted after their first substantiated complaint. Both of
+                these statistics came from the same dataset, but audiences can come up with different conclusions
+                depending on how the data is presented.</p>
 
-                <p>What surprised us most was how small design choices could affect how people understand the data. For example, when we changed the y-axis to start at 40% instead of 0%, the difference in promotion rates looked much bigger than it actually was. We also noticed that using certain words in the titles could make the results sound more dramatic. This made us realize that even if the numbers are accurate, the way we present them can still mislead readers. After seeing this, we realized that ethical visualization is not just about having accurate numbers, but also about making sure the way we present the data doesn't give people the wrong idea.</p>
+            <p>What surprised us most was how small design choices could affect how people understand the data. For
+                example, when we changed the y-axis to start at 40% instead of 0%, the difference in promotion rates
+                looked much bigger than it actually was. We also noticed that using certain words in the titles could
+                make the results sound more dramatic. This made us realize that even if the numbers are accurate, the
+                way we present them can still mislead readers. After seeing this, we realized that ethical visualization
+                is not just about having accurate numbers, but also about making sure the way we present the data
+                doesn't give people the wrong idea.</p>
 
-                <p>We think that persuasive design choices are acceptable as long as they help people actually understand the data without hiding important information. For example, highlighting or bolding certain words with different colors is fine as it helps the reader focus on what is important in the design. However, it can become misleading if the design makes differences seem bigger than they really are or leave out any detail that can change how the audience understands the result. We also agree that it can be hard to know the difference between acceptable and misleading choices because it depends on how the data is presented. Overall, this project taught us to be more careful when creating graphs and to think about how our design choices might affect the audience.</p>
-            </section>
-        </main>
-    </body>
+            <p>We think that persuasive design choices are acceptable as long as they help people actually understand
+                the data without hiding important information. For example, highlighting or bolding certain words with
+                different colors is fine as it helps the reader focus on what is important in the design. However, it
+                can become misleading if the design makes differences seem bigger than they really are or leave out any
+                detail that can change how the audience understands the result. We also agree that it can be hard to
+                know the difference between acceptable and misleading choices because it depends on how the data is
+                presented. Overall, this project taught us to be more careful when creating graphs and to think about
+                how our design choices might affect the audience.</p>
+        </section>
+    </main>
+</body>
+
 </html>
